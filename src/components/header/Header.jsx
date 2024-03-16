@@ -1,10 +1,27 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "../../css/header.css"
 import Logo from "../../assets/images/Logo.png"
+import { navigationList } from "../Navigation";
 
-const URLParam = useParams();
 
 function HeaderComponent() {
+
+    const navClass = "nav-link p-3 m-0";
+    const navClassActive = "nav-link p-3 m-0 active"
+    const {pathname} = useLocation();
+
+    function DisplayNavList() {
+        return(
+            navigationList.map(e => {
+                return(
+                    <li className="nav-item" key={e.key}><Link className= {(e.url === pathname) ? navClassActive : navClass} to={e.url}>{e.title}</Link></li>
+                )
+            })
+        )
+    }
+
+    
+
     return(
         <header className="d-flex flex-column main-font">
             <div className="container-fluid d-flex flex-row justify-content-between main-bg-color align-items-center p-2">
@@ -36,15 +53,11 @@ function HeaderComponent() {
         </div>
         <div className="container-fluid d-flex flex-column justify-content-between secondary-bg-color align-items-center p-2">
             <div className="container d-flex justify-content-center align-items-center">
-                <a href="index.html"><img src={Logo} alt="GameOn" className="img-fluid"/></a>
+                <Link to="/"><img src={Logo} alt="GameOn" className="img-fluid"/></Link>
             </div>
             <div className="navbar navbar-expand-lg">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 header-nav">
-                    <li className="nav-item"><Link className="nav-link p-3 m-0" id="index" to="/">Naslovna</Link></li>
-                    <li className="nav-item"><Link className="nav-link p-3 m-0" id="products" to="/products">Proizvodi</Link></li>
-                    <li className="nav-item"><Link className="nav-link p-3 m-0" id="about" to="/about">O nama</Link></li>
-                    <li className="nav-item"><Link className="nav-link p-3 m-0" id="blog" to="/blog">Blog</Link></li>
-                    <li className="nav-item"><Link className="nav-link p-3 m-0" id="contact" to="/contact">Kontakt</Link></li>
+                    <DisplayNavList/>
                 </ul>
             </div>
         </div>

@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 
 function ProductList() {
     return(
-        <h2>Primjer</h2>
+        <ul>
+            <li>Product 1</li>
+            <li><Link to="/products/2">Product 2</Link></li>
+            <li>Product 3</li>
+        </ul>
     )
 }
 
