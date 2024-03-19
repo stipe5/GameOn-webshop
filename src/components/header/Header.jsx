@@ -9,6 +9,7 @@ function HeaderComponent() {
     const navClass = "nav-link p-3 m-0";
     const navClassActive = "nav-link p-3 m-0 active"
     const {pathname} = useLocation();
+    
 
     function DisplayNavList() {
         return(
