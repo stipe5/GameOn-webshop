@@ -1,4 +1,5 @@
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Toast } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 
@@ -15,7 +16,7 @@ function ProductCard({product}) {
                 <Card.Title as={Link} to={product.id} className="text-center product-name fs-5">{product.name}</Card.Title>
                 <div className="d-flex flex-row justify-content-center align-items-center w-100 gap-1">
                     <Button as={Link} to={product.id} variant="primary product-button" className="w-50 flex-shrink-1" >Detailed view</Button>
-                    <Button variant="primary product-button" className="w-50 flex-shrink-1" ><i class="bi bi-cart"></i></Button>
+                    <Button variant="primary product-button" className="w-50 flex-shrink-1" onClick={() => toast.success("Product added to cart")}><i class="bi bi-cart"></i></Button>
                 </div>
             </Card.Body>
         </Card>
