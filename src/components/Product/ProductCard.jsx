@@ -12,10 +12,10 @@ function ProductCard({product}) {
         <Card key={product.id} style={{ width: '18rem' }}>
             <Card.Img variant="top" src={"src/assets/"+product.src} className="img-fluid"/>
             <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                <Card.Title className="text-center">{product.name}</Card.Title>
+                <Card.Title as={Link} to={product.id} className="text-center product-name fs-5">{product.name}</Card.Title>
                 <div className="d-flex flex-row justify-content-center align-items-center w-100 gap-1">
-                    <Button as={Link} to={"product/" + product.id} variant="primary" className="w-50 flex-shrink-1" >Detailed view</Button>
-                    <Button as={Link} to={"product/" + product.id} variant="primary" className="w-50 flex-shrink-1" ><i class="bi bi-cart"></i></Button>
+                    <Button as={Link} to={product.id} variant="primary product-button" className="w-50 flex-shrink-1" >Detailed view</Button>
+                    <Button variant="primary product-button" className="w-50 flex-shrink-1" ><i class="bi bi-cart"></i></Button>
                 </div>
             </Card.Body>
         </Card>

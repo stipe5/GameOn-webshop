@@ -41,3 +41,17 @@
     color: var(--accent-text-color);
     border: 1px solid var(--main-background-color);
 }
+.product-button {
+    background-color: var(--main-background-color);
+    border-color: var(--main-background-color);
+}
+.product-button:hover {
+    background-color: var(--main-background-color-hover);
+    border-color: var(--main-background-color);
+}
+.product-name {
+    text-decoration: none;
+}
+.product-name:hover {
+    color: var(--accent-text-color);
+}

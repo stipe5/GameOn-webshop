@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
     --main-background-color: #E53D00;
+    --main-background-color-hover: #ea6433;
     --secondary-background-color: #343434;
     --third-background-color: white;
     --main-text-color: white;
